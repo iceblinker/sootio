@@ -33,6 +33,11 @@
 - **Audio Codec Filtering**: Skip AAC/Opus if desired
 - **Junk Release Filtering**: Automatically filters YIFY, RARBG, and other low-quality groups
 
+### 🧠 AI Intelligence
+- **Semantic Title Matching**: Uses an LLM to smartly match show titles even when naming conventions differ (e.g., "The Office" vs "The Office (US)").
+- **Smart Junk Filtering**: Analyzes release titles to detect low-quality CAM/TS streams that bypass standard filters.
+
+
 ### ⚡ Performance & Scalability
 - **Multi-Worker Clustering**: Up to 32 workers for high-load scenarios (configurable)
 - **Dual-Layer Caching**: 5000-entry in-memory + SQLite persistent cache
@@ -335,6 +340,39 @@ SCRAPER_CACHE_TTL_SERIES_MIN=60
 SQLITE_CACHE_ENABLED=true
 SQLITE_CACHE_TTL_DAYS=30
 ```
+
+### 🤖 AI Configuration (Optional)
+
+Sootio's AI features work with any OpenAI-compatible API (Ollama, OpenAI, DeepSeek, Groq, etc.).
+
+**Default (Local Ollama):**
+```env
+AI_MATCHING_ENABLED=true
+# AI_API_BASE defaults to http://ollama:11434/v1
+# AI_MODEL defaults to llama3.1:8b
+# AI_API_KEY defaults to 'ollama'
+```
+
+**External Provider Examples:**
+
+*OpenAI:*
+```env
+AI_MATCHING_ENABLED=true
+AI_API_BASE=https://api.openai.com/v1
+AI_MODEL=gpt-4o-mini
+AI_API_KEY=sk-proj-...
+```
+
+*DeepSeek / Groq / Others:*
+```env
+AI_MATCHING_ENABLED=true
+AI_API_BASE=https://api.deepseek.com/v1
+AI_MODEL=deepseek-chat
+AI_API_KEY=your_key
+```
+
+*Legacy `OLLAMA_*` variables are still supported for backward compatibility.*
+
 
 ### Proxy Support
 
