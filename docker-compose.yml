@@ -10,22 +10,26 @@ services:
     ports:
       - "55771:55771"
     volumes:
-      - sootio-data:/app/data  # Persist SQLite cache data
+      - sootio-data:/app/data # Persist SQLite cache data
     networks:
       - sootio-network
+      - ai_network
     env_file:
       - .env
     environment:
       - NODE_ENV=production
       - LOG_LEVEL=error
-    command: ["npm", "run", "standalone"]
+    command: [ "npm", "run", "standalone" ]
 
     restart: always
 
 volumes:
-  sootio-data:  # Named volume for persistent data
+  sootio-data:
+    # Named volume for persistent data
 
 networks:
   sootio-network:
     driver: bridge
     name: sootio-network
+  ai_network:
+    external: true
