@@ -11,7 +11,8 @@ RUN apk add --no-cache \
     make \
     g++ \
     sqlite \
-    sqlite-dev
+    sqlite-dev \
+    curl
 
 # Copy only dependency files first (better layer caching)
 COPY package*.json ./
