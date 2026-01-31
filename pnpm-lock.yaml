@@ -65,9 +65,6 @@ importers:
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
-      offcloud-api:
-        specifier: ^1.0.2
-        version: 1.0.2
       parse-torrent-title:
         specifier: github:TheBeastLT/parse-torrent-title#b98e2ba2fb64fd5fa1c34c620bd9050bbc2e271d
         version: https://codeload.github.com/TheBeastLT/parse-torrent-title/tar.gz/b98e2ba2fb64fd5fa1c34c620bd9050bbc2e271d
@@ -1804,9 +1801,6 @@ packages:
   object-inspect@1.13.3:
     resolution: {integrity: sha512-kDCGIbxkDSXE3euJZZXzc6to7fCrKHNI/hSRQnRuQ+BWjFNzZwiFF8fj/6o2t2G9/jTj8PSIYTfCLelLZEeRpA==}
     engines: {node: '>= 0.4'}
-
-  offcloud-api@1.0.2:
-    resolution: {integrity: sha512-KOxDX+QIUcI/JEwoXoRGK7P+RygSsmCOta/6bEtKeBMc9CDEnb9xgGNDjDFYCxm6U8rvaOhF9NA02i3EisH9Pw==}
 
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
@@ -4488,10 +4482,6 @@ snapshots:
   object-assign@4.1.1: {}
 
   object-inspect@1.13.3: {}
-
-  offcloud-api@1.0.2:
-    dependencies:
-      request: 2.88.2
 
   on-finished@2.4.1:
     dependencies:

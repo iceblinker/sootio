@@ -1,6 +1,6 @@
 {
 	"name": "Sootio",
-	"version": "1.8.3",
+	"version": "1.8.4",
 	"description": "Stremio Addon to search downloads and torrents in debrid services",
 	"main": "server.js",
 	"scripts": {
@@ -34,7 +34,6 @@
 		"loglevel": "^1.9.2",
 		"node-cache": "^5.1.2",
 		"node-fetch": "^3.3.2",
-		"offcloud-api": "^1.0.2",
 		"parse-torrent-title": "github:TheBeastLT/parse-torrent-title#b98e2ba2fb64fd5fa1c34c620bd9050bbc2e271d",
 		"pg": "^8.16.3",
 		"premiumize-api": "^1.0.3",
