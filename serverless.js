@@ -53,8 +53,10 @@ router.get('/:configuration?/manifest.json', (req, res) => {
 })
 
 router.get(`/:configuration?/:resource/:type/:id/:extra?.json`, limiter, (req, res, next) => {
+    console.log(`[DEBUG-ROUTE] Received request: resource=${req.params.resource}, type=${req.params.type}, id=${req.params.id}, config length=${req.params.configuration?.length || 0}`)
     const { resource, type, id } = req.params
     const config = parseConfiguration(req.params.configuration)
+    console.log(`[DEBUG-ROUTE] Parsed config providers: ${config.DebridServices?.map(s => s.provider).join(', ') || 'none'}`)
     const extra = req.params.extra ? qs.parse(req.url.split('/').pop().slice(0, -5)) : {}
     const host = `${req.protocol}://${req.headers.host}`;
     const clientIp = requestIp.getClientIp(req);
